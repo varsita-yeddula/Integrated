@@ -8,7 +8,7 @@ const Header = () => {
             <img src={logo} alt="MassMutual Logo" className={styles.logo} />  {/* Logo Image */}
             <nav className={styles.nav}>
                 <ul className={styles.navLinks}>
-                <li><a href="#Hero">Home</a></li>
+                <li><Link to="/">Home</Link></li>
                     <li><a href="#WhyChoose">About Us</a></li>
                     <li><a href="#Plans">Plans</a></li>
                     <li><a href="#Contact">Contact</a></li>
