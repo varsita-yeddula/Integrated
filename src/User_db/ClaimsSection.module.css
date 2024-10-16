@@ -1,0 +1,47 @@
+.claimsSection {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid var(--bp-color-primary-light-pressed);
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: var(--bp-color-primary-default); /* Primary color for title */
+}
+
+.claimCard {
+  background-color: white;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  border: solid,rgb(0, 46, 107);
+}
+
+.claimDetails {
+  color: var(--bp-color-primary-default); /* Use the primary default color for text */
+  font-size: 1.1rem;
+}
+
+.claimButton {
+  background-color: var(--bp-color-primary-default);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.claimButton:hover {
+  background-color: var(--bp-color-primary-hover); /* Hover state color */
+}
+
+.claimButton:active {
+  background-color: var(--bp-color-primary-pressed); /* Pressed state color */
+}

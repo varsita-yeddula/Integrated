@@ -1,0 +1,34 @@
+@import  './App.module.css';
+
+.header {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bp-color-primary-pressed);
+    color: white;
+}
+
+.logo {
+    width: 150px;  /* Adjust the size of the logo */
+}
+
+.nav {
+    display: flex;
+}
+
+.navLinks {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.navLinks a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navLinks a:hover {
+    color: var(--bp-color-primary-light-pressed);
+}
