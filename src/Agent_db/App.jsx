@@ -54,9 +54,7 @@ function App() {
           {/* Protected routes - only accessible if authenticated */}
           <Route
             path="/dashboard"
-            element={
-              isAuthenticated ? <Dashboard /> : <Navigate to="/o" />
-            }
+            element= {<Dashboard />}
           />
           <Route
             path="/add-policy"

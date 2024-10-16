@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import styles from '../styles/EditPolicy.module.css';
+import Navbar from '../components/Navbar';
 
 const EditPolicy = () => {
   const { id } = useParams();
@@ -24,6 +25,7 @@ const EditPolicy = () => {
   };
 
   return (
+    <><Navbar />
     <div className={styles.formContainer}>
       <h2>Edit Policy</h2>
       {policy && (
@@ -59,6 +61,7 @@ const EditPolicy = () => {
         </form>
       )}
     </div>
+    </>
   );
 };
 

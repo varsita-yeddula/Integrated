@@ -1,4 +1,5 @@
 
+import Navbar from '../components/Navbar';
 import globalStyles from '../styles/global.module.css';
 const Policies = () => {
   const policies = [
@@ -9,7 +10,7 @@ const Policies = () => {
   ];
 
   return (
-   
+      <><Navbar />
       <div className={globalStyles.container}>
       <h1>Listed Policies</h1>
       <table className={globalStyles.table}>
@@ -31,6 +32,7 @@ const Policies = () => {
         </tbody>
       </table>
     </div>
+    </>
   );
 };
 

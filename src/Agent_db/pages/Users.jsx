@@ -1,3 +1,4 @@
+import Navbar from '../components/Navbar';
 import globalStyles from '../styles/global.module.css';
 
 const Users = () => {
@@ -9,6 +10,7 @@ const Users = () => {
   ];
 
   return (
+    <><Navbar />
 <div className={globalStyles.container}>
       <h1>Total Registered Users</h1>
       <table className={globalStyles.table}>
@@ -32,6 +34,7 @@ const Users = () => {
         </tbody>
       </table>
     </div>
+    </>
   );
 };
 

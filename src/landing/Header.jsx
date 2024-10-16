@@ -33,20 +33,6 @@ const Header = () => {
                 </ul>
             </nav>
         </header>
-        <div id="Hero">
-            <Hero/>
-        </div>
-        <div id="WhyChoose">
-        <WhyChoose/>
-        </div>
-        <FAQ/>
-        <div id="Plans">
-        <Plans/>
-        </div>
-        <div id="Contact">
-        <Subscription/>
-        </div>
-        <Testimonials/>
         </>
     );
 };

@@ -7,10 +7,7 @@ import Navigation from './Navigation.jsx'
 function Userdb(){
     return (
         <>
-        <UserHeader/>
         <Navigation/>
-        <Extrafoot/>
-        <UserFooter/>
         </>
     );
 }

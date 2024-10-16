@@ -66,7 +66,6 @@ function Signup() {
 
     return (
         <>
-        <Header />
         <div className={styles.container}>
             <div className={styles.LoginCard}>
                 <label>Name</label><br />
@@ -120,7 +119,6 @@ function Signup() {
                 <button onClick={handleSignup}>Sign up</button>
             </div>
         </div>
-        <Footer />
         </>
     );
 }

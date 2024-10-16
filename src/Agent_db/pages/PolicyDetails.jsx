@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import styles from '../styles/PolicyDetails.module.css'; // Ensure this is correct
+import Navbar from '../components/Navbar';
 
 const PolicyDetails = () => {
   const { id } = useParams(); // Get the policy ID from the URL
@@ -22,6 +23,7 @@ const PolicyDetails = () => {
   }, [id]);
 
   return (
+    <><Navbar />
     <div className={styles.detailsContainer}> {/* Using CSS module styles */}
       {policy ? (
         <>
@@ -39,6 +41,7 @@ const PolicyDetails = () => {
         <p>Loading policy details...</p>
       )}
     </div>
+    </>
   );
 };
 

@@ -1,5 +1,6 @@
 
 
+import Navbar from '../components/Navbar';
 import globalStyles from '../styles/global.module.css';
 
 const Categories = () => {
@@ -11,6 +12,7 @@ const Categories = () => {
   ];
 
   return (
+    <><Navbar />
     <div className={globalStyles.container}>
       <h1>Policy Categories</h1>
       <table className={globalStyles.table}>
@@ -34,6 +36,7 @@ const Categories = () => {
         </tbody>
       </table>
     </div>
+    </>
   );
 };
 

@@ -14,12 +14,12 @@
   transform: translateY(-2px); 
 }
 
-h2 {
+.detailsContainer h2 {
   color: var(--bp-color-primary-default); 
   margin-bottom: 10px; 
 }
 
-p {
+.detailsContainer p {
   font-size: 1rem; 
   color: #333; 
   margin: 5px 0; 
@@ -59,11 +59,11 @@ p {
       padding: 15px; 
   }
   
-  h2 {
+.detailsContainer h2 {
       font-size: 1.5rem; 
   }
   
-  p {
+.detailsContainer p {
       font-size: 0.9rem; 
   }
 }
