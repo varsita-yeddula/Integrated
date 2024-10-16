@@ -1,82 +1,66 @@
 import { useState } from 'react';
-import Modal from "../components/Modal";
 import styles from '../styles/PolicyList.module.css';
 
-const policies = [
-  { id: 1, name: 'Health Insurance', type: 'Health', coverage: 100000, duration: 5 },
-  { id: 2, name: 'Life Insurance', type: 'Life', coverage: 500000, duration: 10 },
-];
+const PolicyDetails = () => {
+  const [policies, ] = useState([
+    { id: 1, name: 'Active Policy 1', policyId: 'AP001', category: 'Health', price: '$200', expiry: '2025-12-31', status: 'active' },
+    { id: 2, name: 'Active Policy 2', policyId: 'AP002', category: 'Health', price: '$300', expiry: '2025-12-25', status: 'active' },
+    { id: 3, name: 'Active Policy 3', policyId: 'AP003', category: 'Health', price: '$400', expiry: '2025-12-30', status: 'active' },
+    { id: 4, name: 'Inactive Policy 1', policyId: 'IP001', category: 'Life', price: '$150', expiry: '2025-11-20', status: 'inactive' },
+    { id: 5, name: 'Inactive Policy 2', policyId: 'IP002', category: 'Life', price: '$250', expiry: '2025-10-10', status: 'inactive' },
+  ]);
 
-const PolicyList = () => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [modalVisible, setModalVisible] = useState(false);
-  const [policyToDelete, setPolicyToDelete] = useState(null);
+  const [filter, setFilter] = useState('active');
+  const [showDelete, setShowDelete] = useState(null);
 
-  const handleSearch = (e) => {
-    setSearchTerm(e.target.value);
-  };
-
-  const handleDelete = (policy) => {
-    setPolicyToDelete(policy);
-    setModalVisible(true);
-  };
-
-  const confirmDelete = () => {
-    console.log(`Policy ${policyToDelete.name} has been deleted.`);
-    setModalVisible(false);
-  };
+  const filteredPolicies = policies.filter(policy => policy.status === filter);
 
   return (
-    <div className={styles.listContainer}>
-      <h2>Policy List</h2>
-      <input
-        type="text"
-        placeholder="Search policies..."
-        value={searchTerm}
-        onChange={handleSearch}
-        className={styles.searchInput}
-      />
-      <table className={styles.table}>
+    <div className={styles.card}>
+      <div className={styles.cardHeader}>
+        <h2>Policies</h2>
+      </div>
+      <div className={styles.controls}>
+        <div className={styles.tabs}>
+          <button className={`${styles.tab} ${filter === 'active' ? styles.active : ''}`} onClick={() => setFilter('active')}>Active</button>
+          <button className={`${styles.tab} ${filter === 'inactive' ? styles.inactive : ''}`} onClick={() => setFilter('inactive')}>Inactive</button>
+        </div>
+        <div className={styles.searchTypeTotal}>
+          <input type="text" placeholder="Search" className={styles.searchInput} />
+          <div className={styles.totalCount}>Total Count: {filteredPolicies.length}</div>
+        </div>
+      </div>
+      <table className={styles.policiesTable}>
         <thead>
           <tr>
+            <th>S.No</th>
             <th>Name</th>
-            <th>Type</th>
-            <th>Coverage</th>
-            <th>Duration</th>
-            <th>Actions</th>
+            <th>Policy ID</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Expiry</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
-          {policies.map(policy => (
+          {filteredPolicies.map((policy, index) => (
             <tr key={policy.id}>
+              <td>{index + 1}</td>
               <td>{policy.name}</td>
-              <td>{policy.type}</td>
-              <td>{policy.coverage}</td>
-              <td>{policy.duration}</td>
-              <td>
-                <button className={styles.editButton}>Edit</button>
-                <button
-                  className={styles.deleteButton}
-                  onClick={() => handleDelete(policy)}
-                >
-                  Delete
-                </button>
+              <td>{policy.policyId}</td>
+              <td>{policy.category}</td>
+              <td>{policy.price}</td>
+              <td>{policy.expiry}</td>
+              <td className={styles.actionCell}>
+                <button className={`${styles.btn} ${styles.editBtn}`}>Edit</button>
+                <button onClick={() => alert(`Deleting policy: ${policy.name}`)}>Delete</button>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
-
-      {/* Modal for delete confirmation */}
-      <Modal
-        show={modalVisible}
-        title="Confirm Delete"
-        message={`Are you sure you want to delete ${policyToDelete?.name}?`}
-        onConfirm={confirmDelete}
-        onCancel={() => setModalVisible(false)}
-      />
     </div>
   );
 };
 
-export default PolicyList;
+export default PolicyDetails;

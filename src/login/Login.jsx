@@ -27,7 +27,7 @@ function Login() {
             navigate('/Userdb');
         } 
         else if(email === 'agent' && password === 'agent'){
-            navigate('/Agentdb');
+            navigate('/dashboard');
         }
           else {
             // Display error message for incorrect email
