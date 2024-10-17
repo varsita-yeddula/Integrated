@@ -33,69 +33,19 @@ function App() {
         <Route path="/Userdb" element={<Userdb />} />
         <Route path="/Agentdb" element={<Agentdb />} />
         <Route path="/dashboard" element= {<Dashboard />} />
-          <Route
-            path="/add-policy"
-            element={<AddPolicy />
-            }
-          />
-          <Route
-            path="/policy-list"
-            element={<PolicyList />
-            }
-          />
-          <Route
-            path="/edit-policy/:id"
-            element={<EditPolicy />
-            }
-          />
-          
-          <Route
-            path="/policy-details/:id"
-            element={<PolicyDetails />
-            }
-          />
+        <Route path="/add-policy"element={<AddPolicy />}/>
+        <Route path="/policy-list" element={<PolicyList />}/>
+        <Route path="/edit-policy/:id" element={<EditPolicy />}/>
+        <Route path="/policy-details/:id" element={<PolicyDetails />}/>
           {/* New routes for additional pages */}
-          <Route
-            path="/users"
-            element={<Users />
-            }
-          />
-          <Route
-            path="/policies"
-            element={<Policies />
-            }
-          />
-          <Route
-            path="/categories"
-            element={<Categories />
-            }
-          />
-          <Route
-            path="/subcategories"
-            element={<SubCategories />
-            }
-          />
-          <Route
-            path="/all-policies"
-            element={<AllPolicies />
-            }
-          />
-          <Route
-            path="/approved-policy-holders"
-            element={<ApprovedPolicyHolders />
-            }
-          />
-          <Route
-            path="/pending-approval"
-            element={<PendingApproval />
-            }
-          />
-          <Route
-            path="/disapproved-policy-holders"
-            element={<DisapprovedPolicyHolders />
-            }
-          />
-
+        <Route path="/users" element={<Users />}/>
+        <Route path="/policies" element={<Policies />}/>
+        <Route path="/categories" element={<Categories />}/>
+        <Route path="/subcategories" element={<SubCategories />}/>
+        <Route path="/all-policies" element={<AllPolicies />}/>
+        <Route path="/approved-policy-holders" element={<ApprovedPolicyHolders />}/>
+        <Route path="/pending-approval" element={<PendingApproval />}/>
+        <Route path="/disapproved-policy-holders" element={<DisapprovedPolicyHolders />}/>
       </Routes>
       <Footer />
     </Router>
