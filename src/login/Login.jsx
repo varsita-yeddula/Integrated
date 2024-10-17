@@ -6,7 +6,7 @@ import Footer from './Footer.jsx';
 import styles from './Login.module.css';
 
 function Login() {
-    const [email, setEmail] = useState('');
+    const [UserName, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
     const navigate = useNavigate();  // To navigate to another page on successful login
@@ -23,14 +23,14 @@ function Login() {
     // Handle login submission
     const handleLogin = (e) => {
         e.preventDefault();
-        if (email === 'user' && password === 'user') {
+        if (UserName === 'user' && password === 'user') {
             navigate('/Userdb');
         } 
-        else if(email === 'agent' && password === 'agent'){
+        else if(UserName === 'agent' && password === 'agent'){
             navigate('/dashboard');
         }
           else {
-            // Display error message for incorrect email
+            // Display error message for incorrect UserName
             setError('Invalid Credentials');
           }
     };
@@ -41,19 +41,19 @@ function Login() {
                 <h3 className={styles.titletext}>Log in to Dashboard</h3>
                 <div className={styles.container}>
                     <div className={styles.LoginCard}>
-                        <label>Email</label><br />
+                        <label>UserName</label><br />
                         <input 
                             type="text" 
-                            id="InputEmail" 
-                            placeholder="Email" 
-                            value={email}
+                            id="UserName" 
+                            placeholder="UserName" 
+                            value={UserName}
                             onChange={handleEmailChange} 
                         /><br />
 
                         <label>Password</label><br />
                         <input 
                             type="password" 
-                            id="InputPass" 
+                            id="Password" 
                             placeholder="Password" 
                             value={password}
                             onChange={handlePasswordChange} 

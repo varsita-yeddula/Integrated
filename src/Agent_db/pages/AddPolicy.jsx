@@ -153,11 +153,9 @@ function AddPolicy() {
                     onChange={handleChange}
                 >
                     <option value="Life insurance">Life Insurance</option>
-                    <option value="Auto insurance">Auto Insurance</option>
                     <option value="Travel insurance">Travel Insurance</option>
                     <option value="Health insurance">Health Insurance</option>
-                    <option value="Home insurance">Home Insurance</option>
-                    <option value="Business insurance">Business Insurance</option>
+                    <option value="Vehicle insurance">Home Insurance</option>
                 </select><br />
 
                 <label>Insurance Coverage Amount</label>
