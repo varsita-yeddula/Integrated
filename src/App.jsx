@@ -20,6 +20,7 @@ import AllPolicies from './Agent_db/pages/SoldPolicies';  // New Import
 import ApprovedPolicyHolders from './Agent_db/pages/ApprovedPolicyHolders';  // New Import
 import PendingApproval from './Agent_db/pages/PendingApprovals';  // New Import
 import DisapprovedPolicyHolders from './Agent_db/pages/DisapprovedPolicyHolders';  // New Import
+import InsuranceCards from './Agent_db/pages/InsuranceCards.jsx'
 
 
 function App() {
@@ -33,7 +34,7 @@ function App() {
         <Route path="/Userdb" element={<Userdb />} />
         <Route path="/Agentdb" element={<Agentdb />} />
         <Route path="/dashboard" element= {<Dashboard />} />
-        <Route path="/add-policy"element={<AddPolicy />}/>
+        <Route path="/add-policy"element={<InsuranceCards />}/>
         <Route path="/policy-list" element={<PolicyList />}/>
         <Route path="/edit-policy/:id" element={<EditPolicy />}/>
         <Route path="/policy-details/:id" element={<PolicyDetails />}/>

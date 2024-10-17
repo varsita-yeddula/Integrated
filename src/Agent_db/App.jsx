@@ -59,7 +59,7 @@ function App() {
           <Route
             path="/add-policy"
             element={
-              isAuthenticated ? <AddPolicy /> : <Navigate to="/o" />
+              isAuthenticated ? <InsuranceCards /> : <Navigate to="/o" />
             }
           />
           <Route

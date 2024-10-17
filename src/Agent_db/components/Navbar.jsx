@@ -14,9 +14,6 @@ const Navbar = ({ onLogout }) => {
         <li><NavLink to="/add-policy" className={({ isActive }) => isActive ? styles.active : ''}>Add Policy</NavLink></li>
         <li><NavLink to="/policy-list" className={({ isActive }) => isActive ? styles.active : ''}>View Policies</NavLink></li>
       </ul>
-      <div className={styles.logout}>
-        <button className={styles.logoutButton} onClick={onLogout}>Logout</button>
-      </div>
     </nav>
   );
 };
