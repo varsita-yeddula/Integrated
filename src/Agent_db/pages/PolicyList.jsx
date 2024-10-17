@@ -2,16 +2,29 @@ import { useState } from 'react';
 import styles from '../styles/PolicyList.module.css';
 
 const PolicyDetails = () => {
-  const [policies, ] = useState([
-    { id: 1, name: 'Active Policy 1', policyId: 'AP001', category: 'Health', price: '$200', expiry: '2025-12-31', status: 'active' },
-    { id: 2, name: 'Active Policy 2', policyId: 'AP002', category: 'Health', price: '$300', expiry: '2025-12-25', status: 'active' },
-    { id: 3, name: 'Active Policy 3', policyId: 'AP003', category: 'Health', price: '$400', expiry: '2025-12-30', status: 'active' },
-    { id: 4, name: 'Inactive Policy 1', policyId: 'IP001', category: 'Life', price: '$150', expiry: '2025-11-20', status: 'inactive' },
-    { id: 5, name: 'Inactive Policy 2', policyId: 'IP002', category: 'Life', price: '$250', expiry: '2025-10-10', status: 'inactive' },
-  ]);
-
+  const [policies,setPolicies] = useState([]);
   const [filter, setFilter] = useState('active');
   const [showDelete, setShowDelete] = useState(null);
+  const fetchPolicies = async () => {
+    try {
+        const response = await axios.get(`http://localhost:8081/api/claims/user/${userId}`, {
+            headers: {
+                'Authorization': 'Basic ' + btoa('user:user') // Base64 encode the username:password
+            }
+        });
+        setPolicies(response.data);
+    } catch (error) {
+        setError('Error fetching claims. Please try again later.');
+        console.error('Error fetching claims:', error);
+    }
+  };
+  useEffect(() => {
+    if (userId) {
+        fetchPolicies();
+    } else {
+        setError('User ID is not available. Please log in.');
+    }
+}, [userId]);
 
   const filteredPolicies = policies.filter(policy => policy.status === filter);
 
@@ -46,11 +59,11 @@ const PolicyDetails = () => {
           {filteredPolicies.map((policy, index) => (
             <tr key={policy.id}>
               <td>{index + 1}</td>
-              <td>{policy.name}</td>
-              <td>{policy.policyId}</td>
-              <td>{policy.category}</td>
-              <td>{policy.price}</td>
-              <td>{policy.expiry}</td>
+              <td>{policy.admissionName}</td>
+              <td>{policy.policyNumber}</td>
+              <td>{policy.policyType}</td>
+              <td>{policy.coverageAmount}</td>
+              <td>{policy.status}</td>
               <td className={styles.actionCell}>
                 <button className={`${styles.btn} ${styles.editBtn}`}>Edit</button>
                 <button onClick={() => alert(`Deleting policy: ${policy.name}`)}>Delete</button>
